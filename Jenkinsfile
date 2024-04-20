@@ -6,7 +6,7 @@ pipeline {
     environment {
         KUBECONFIG_CREDENTIAL_ID = 'k8s-kubeconfig-dev'
         version = "backend_${env.BUILD_NUMBER}"
-        docker_image = ":pushpa04/3-tier-app${version}"
+        docker_image = "pushpa04/3-tier-app:${version}"
     }
 
     stages {
