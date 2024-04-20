@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/persevcareers/Project-Final-Backend.git'
+                git branch: 'main', url: 'https://github.com/pushpa7396/3-tier-backend.git'
             }
         }
 
