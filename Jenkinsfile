@@ -6,7 +6,7 @@ pipeline {
     environment {
         KUBECONFIG_CREDENTIAL_ID = 'k8s-kubeconfig-dev'
         version = "backend_${env.BUILD_NUMBER}"
-        docker_image = "persevcareers6577/perseverance-project:${version}"
+        docker_image = ":pushpa04/3-tier-app${version}"
     }
 
     stages {
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     def dockerfilePath = '.'
-                   sh "sudo docker build -t 'persevcareers6577/perseverance-project:${version}' ."
+                   sh "sudo docker build -t 'pushpa04/3-tier-app:${version}' ."
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    sh "sudo docker push 'persevcareers6577/perseverance-project:${version}'"
+                    sh "sudo docker push 'pushpa04/3-tier-app:${version}'"
                 }
             }
         } 
